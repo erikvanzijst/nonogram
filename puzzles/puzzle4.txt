@@ -1,0 +1,9 @@
+# Simple asymmetrical puzzle that yields the following solution:
+#
+#	# . . 1
+#	. # # 2
+#	1 1 1
+#
+
+hints.top = 1 1 1
+hints.left = 1 2

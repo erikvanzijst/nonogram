@@ -1,0 +1,41 @@
+<project name="Nonogram Solver" default="dist" basedir=".">
+	<description>
+	    Build file that compiles the nonogram solver and creates the
+		distribution's jar file.
+	</description>
+
+	<!-- set global properties for this build -->
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="dist"  location="dist"/>
+	<property name="version" value="0.1"/>
+
+	<target name="init">
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}"/>
+	</target>
+
+	<target name="compile" depends="init" description="Compile the source code.">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac target="1.3" source="1.3" srcdir="${src}" destdir="${build}"/>
+	</target>
+
+	<target name="dist" depends="compile" description="Generate the distribution.">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}/"/>
+
+		<!-- Put everything in ${build} into the nonogram-${version}.jar file -->
+		<jar jarfile="${dist}/nonogram-${version}.jar" basedir="${build}">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}"/>
+				<attribute name="Main-Class" value="cx.prutser.nonogram.ConsoleSolver"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="clean" description="Clean up.">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+	</target>
+</project>
