@@ -1,13 +1,17 @@
-	Automatic Nonogram Solver
+#	Automatic Nonogram Solver
 
 
-INTRODUCTION
+## INTRODUCTION
 
 This package contains a Java program that can automatically solve nonogram
 puzzles, AKA Japanese Puzzles.
 
+![](screenshot1.jpg)
 
-USAGE
+![](screenshot2.jpg)
+
+
+## USAGE
 
 The distribution comes with a precompiled version of the program, neatly
 packaged in a jar file. It requires a 1.5 Java runtime.
